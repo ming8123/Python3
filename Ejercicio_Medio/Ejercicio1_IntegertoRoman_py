@@ -1,0 +1,22 @@
+def intToRoman(num):
+        """
+        :type num: int
+        :rtype: str
+        """
+      
+        numeros = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+        numerales = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+
+        numeral = ''
+        i = 0
+        while num > 0 :
+            for _ in range(num // numeros[i]):
+                    #no hace falta asignar indice solo que se de vuelta para sumar 
+                    #si fuera rango 0 no entrarias ni si quieras
+                numeral+=numerales[i]
+                    #agregamos el anumral que esta la posicion i poque ha podidi entrar
+                num = num % numeros[i]
+                    #dejas los numero que no esta convertido 
+            i+=1
+            #sumas uno para que cambie de indice de numerales
+        return numeral     
